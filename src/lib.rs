@@ -7,7 +7,24 @@ extern "C" {
     fn log(s: &str);
 }
 
+// #[wasm_bindgen]
+// pub fn say_hello() {
+//     log("Hello, world!");
+// }
+
 #[wasm_bindgen]
-pub fn say_hello() {
-    log("Hello, world!");
+pub struct GameClient {}
+
+#[wasm_bindgen]
+impl GameClient {
+    #[wasm_bindgen(constructor)]
+    pub fn new() -> Self {
+        Self {}
+    }
+
+    pub fn update(&mut self, _time: f32, _height: f32, _width: f32) -> Result<(), JsValue> {
+        Ok(())
+    }
+
+    pub fn render(&self) {}
 }
