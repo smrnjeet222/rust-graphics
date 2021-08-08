@@ -7,9 +7,6 @@ rust.then(m => {
     alert('WebGL not supported');
     return;
   }
-
-  gl.enable(gl.BLEND);
-  gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
   
   const FPS_THROTTLER = 1000 / 30;
   const initalTime = Date.now();
